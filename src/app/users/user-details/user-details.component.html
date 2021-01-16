@@ -1,0 +1,18 @@
+<br><br><div class="row">
+    <div class="card clo-lg-10 offset-1" >
+    <div class="card-body">
+      <h5 class="card-title">Id: {{user.id}}</h5>
+      <h5 class="card-title">Name: {{user.name}}</h5>
+      <h5 class="card-title">Username: {{user.username}}</h5>
+      <h5 class="card-title">Email: {{user.email}}</h5>
+      <h5 class="card-title">Phone: {{user.phone}}</h5>
+      <h5 class="card-title">Company: {{user.company.name}}</h5>
+      <h5 class="card-title">Website: {{user.website}}</h5>
+      <h5 class="card-title">Address: {{user.address.street+" "+user.address.suite+" "+user.address.city}}</h5>
+      
+      <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+      <button class="btn btn-primary" (click)="editUser(user.id)">Edite</button>
+      <button class="btn btn-success" (click)="allPost(user.id)">All user posts</button>
+    </div>
+  </div>
+</div>

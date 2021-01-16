@@ -1,0 +1,39 @@
+<br><br>
+<div class="row">
+    <form #f="ngForm" class="col-lg-6 offset-3" >
+    <div>
+      <label for="name" class="form-label">Name</label>
+      <input type="text" name="name" ngModel class="form-control" id="name" placeholder="name" required>
+    </div>
+
+    <div>
+      <label for="username" class="form-label">Username</label>
+      <input type="text" username="username" ngModel class="form-control" id="username" placeholder="username" required>
+    </div>
+    
+    <div>
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" ngModel class="form-control" id="email" placeholder="email" required>
+    </div>
+    <br>
+    <button class="btn btn-success btn-lg" (click)="addUser(f)" [disabled]="!f.valid">click to add</button>
+    </form>
+    </div>
+    <br><br>
+
+
+<br><br><div class="row">
+    <div class="card clo-lg-3 offset-1" style="width: 18rem;" *ngFor="let user of users">
+    <div class="card-body">
+      <h5 class="card-title">Id:{{user.id}}</h5>
+      <h5 class="card-title">nom:{{user.name}}</h5>
+      <h5 class="card-title">prenom: {{user.username}}</h5>
+      <h5 class="card-title">Email: {{user.email}}</h5>
+      
+      <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+      <button class="btn btn-primary" (click)="editUser(user.id)">Edite</button>
+      <button class="btn btn-success" (click)="allPost(user.id)">User's posts</button>
+      <button class="btn btn-info" (click)="details(user.id)">User details</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<br><br><div class="row">
+<form #f="ngForm" class="col-lg-6 offset-3" >
+<div>
+  <label for="title" class="form-label">Title</label>
+  <input type="text" name="title" ngModel class="form-control" id="title" placeholder="title" required>
+</div>
+
+<div>
+  <label for="userid" class="form-label">userid</label>
+  <input type="number" name="userid" ngModel class="form-control" id="userid" placeholder="userid" required>
+</div>
+
+<div>
+  <label for="body" class="form-label">Body</label>
+  <textarea name="body" ngModel class="form-control" id="body" rows="3" required></textarea>
+</div>
+<br>
+<button type="submit" class="btn btn-success btn-lg" (click)="addPost(f)" [disabled]="!f.valid">click to post</button>
+</form>
+</div>
+<br><br>
+
+
+<div class="row">
+    <div class="card clo-lg-3 offset-1" style="width: 18rem;" *ngFor="let p of posts">
+    <div class="card-body">
+      <h5 class="card-title">Title: {{p.title}}</h5>
+      <h5 class="card-title">Id:{{p.id}}</h5>
+      <h5 class="card-title">userId: {{p.userId}}</h5>
+      <p class="card-text">Body: {{p.body}}</p>
+
+      <button class="btn btn-danger" (click)="deletePost(p.id)" >Delete</button>
+ 
+      <button class="btn btn-primary" (click)="editPost(p.id)" >Edit</button>
+        
+      <button class="btn btn-success" (click)="allComment(p.id)" >See all comments</button>
+      <button class="btn btn-primary" (click)="comment(p.id)" >click to comment</button>
+      <br> <br>
+    </div>
+  </div> 
+</div>

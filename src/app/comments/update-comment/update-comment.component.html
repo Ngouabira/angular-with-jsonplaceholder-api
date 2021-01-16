@@ -1,0 +1,22 @@
+<br><br>
+<div class="row">
+    <form #f="ngForm" class="col-lg-6 offset-3" >
+    <div>
+      <label for="name" class="form-label">Name</label>
+      <input type="text" name="name" ngModel class="form-control" id="name" placeholder="name" required>
+    </div>
+    
+    <div>
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" ngModel class="form-control" id="email" placeholder="email" required>
+    </div>
+    
+    <div>
+      <label for="body" class="form-label">Body</label>
+      <textarea name="body" ngModel class="form-control" id="body" rows="3" required></textarea>
+    </div>
+    <br>
+    <button class="btn btn-success btn-lg" (click)="updateComment(f)" [disabled]="!f.valid">click to update comment</button>
+    </form>
+    </div>
+    <br><br>

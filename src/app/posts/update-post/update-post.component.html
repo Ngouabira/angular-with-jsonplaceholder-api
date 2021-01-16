@@ -1,0 +1,22 @@
+<br><br><div class="row">
+    <form #f="ngForm" class="col-lg-6 offset-3" >
+    <div>
+      <label for="title" class="form-label">Title</label>
+      <input type="text" name="title" ngModel class="form-control" id="title" placeholder="title" required>
+    </div>
+    
+    <div>
+      <label for="userid" class="form-label">userid</label>
+      <input type="number" name="userid" ngModel class="form-control" id="userid" placeholder="userid" required>
+    </div>
+    
+    <div>
+      <label for="body" class="form-label">Body</label>
+      <textarea name="body" ngModel class="form-control" id="body" rows="3" required></textarea>
+    </div>
+    <br>
+    <button class="btn btn-success btn-lg" (click)="updatePost(f)" [disabled]="!f.valid">click to update post</button>
+    </form>
+    </div>
+    <br><br>
+    

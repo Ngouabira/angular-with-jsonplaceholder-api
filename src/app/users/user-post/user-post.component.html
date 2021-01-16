@@ -1,0 +1,18 @@
+<br><br><div class="row">
+    <div class="card clo-lg-3 offset-1" style="width: 18rem;" *ngFor="let p of posts">
+    <div class="card-body">
+      <h5 class="card-title">Title: {{p.title}}</h5>
+      <h5 class="card-title">Id:{{p.id}}</h5>
+      <h5 class="card-title">userId: {{p.userId}}</h5>
+      <p class="card-text">Body: {{p.body}}</p>
+
+      <button class="btn btn-danger" (click)="deletePost(p.id)" >Delete</button>
+ 
+      <button class="btn btn-primary" (click)="editPost(p.id)" >Edit</button>
+        
+      <button class="btn btn-success" (click)="allComment(p.id)" >See all comments</button>
+      <button class="btn btn-primary" (click)="comment(p.id)" >click to comment</button>
+      <br> <br>
+    </div>
+  </div> 
+</div>
